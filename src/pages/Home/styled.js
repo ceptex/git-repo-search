@@ -16,6 +16,13 @@ export const Content = styled.div`
   justify-content: center;
 `;
 
+export const Title = styled.h1`
+  text-align: center;
+  font-size: 30px;
+  color: #333;
+  margin-bottom: 30px;
+`;
+
 export const Input = styled.input`
   width: 15vw;
   min-width: 90px;
@@ -52,4 +59,20 @@ export const ErrorMsg = styled.span`
   color: red;
   font-weight: 600;
   margin-top: 20px;
-`
+`;
+
+export const Footer = styled.div`
+position: fixed;
+bottom: 0;
+width: 100%;
+height: 30px;
+background-color: #000;
+align-items: center;
+text-align: right;
+`;
+
+export const Credit = styled.h3`
+font-size: 14px;
+color: #FFF;
+margin-right: 20px;
+`;
