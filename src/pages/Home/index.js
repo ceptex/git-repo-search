@@ -4,7 +4,7 @@ import * as S from './styled';
 import { useNavigate } from 'react-router-dom';
 
 export default function Home(props) {
-    const history = useNavigate();
+    const navigate = useNavigate();
     const [usuario, setUsuario] = useState('');
     const [erro, setErro] = useState(false);
 
@@ -13,13 +13,12 @@ export default function Home(props) {
             .then(response => {
                 const repositories = response.data;
                 const repositoriesName = [];
-                // eslint-disable-next-line array-callback-return
                 repositories.map((repository) => {
                     repositoriesName.push(repository.name);
                 });
                 localStorage.setItem('repositoriesName', JSON.stringify(repositoriesName));
                 setErro(false);
-                history.push('/repositories');
+                navigate('/repositories');
             })
             .catch(err => {
                 setErro(true);
@@ -30,7 +29,7 @@ export default function Home(props) {
         <S.HomeContainer>
             <S.Content>
                 <S.Input autoFocus className="usuarioInput" placeholder="Digite apenas o usuário" value={usuario} onChange={e => setUsuario(e.target.value)} />
-                <S.Button type="button" onClick={handlePesquisa}>Pesquisar</S.Button>
+                <S.Button type="button" onClick={ handlePesquisa }>Pesquisar</S.Button>
             </S.Content>
             {erro ? <S.ErrorMsg>Ocorreu um erro. Tente novamente.</S.ErrorMsg> : ''}
         </S.HomeContainer>

@@ -18,6 +18,7 @@ export const Content = styled.div`
 
 export const Input = styled.input`
   width: 15vw;
+  min-width: 90px;
   border: 1px solid #ddd;
   height: 30px;
   padding: 1px;
@@ -31,7 +32,7 @@ export const Input = styled.input`
 `;
 
 export const Button = styled.button`
-  width: 5vw;
+  width: 80px;
   height: 34px;
   border: 1px solid #000;
   background: #000;
@@ -42,6 +43,7 @@ export const Button = styled.button`
     outline: none;
     box-shadow: none;
   }
+  cursor: pointer;
 `;
 
 export const ErrorMsg = styled.span`

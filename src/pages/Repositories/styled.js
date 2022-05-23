@@ -37,4 +37,5 @@ export const LinkHome = styled(Link)`
   padding: .5rem 0;
   color: #fff;
   text-decoration: none;
+  cursor: pointer;
 `;
