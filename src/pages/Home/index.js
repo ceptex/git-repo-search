@@ -26,12 +26,19 @@ export default function Home(props) {
             });
     }
 
+    const handleKeypress = e => {
+        //it triggers by pressing the enter key
+      if (e.charCode === 13) {
+        handlePesquisa();
+      }
+    };
+
     return (
         <S.HomeContainer>
             <S.Title>GitHub User Repos</S.Title>
             <S.Content>
-                <S.Input autoFocus className="usuarioInput" placeholder="Type user" value={usuario} onChange={e => setUsuario(e.target.value)} />
-                <S.Button type="button" onClick={ handlePesquisa }>Search</S.Button>
+                <S.Input autoFocus className="usuarioInput" placeholder="Type user" value={usuario} onChange={e => setUsuario(e.target.value)} onKeyPress={handleKeypress}/>
+                <S.Button type="submit" onClick={ handlePesquisa }>Search</S.Button>
             </S.Content>
             {erro ? <S.ErrorMsg>Error. Try again.</S.ErrorMsg> : ''}
         </S.HomeContainer>
